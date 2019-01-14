@@ -43,7 +43,7 @@ public class searchCourse {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
+	@Test //This test will verify if the user-Teacher can search for the desired course
 	public void searchCourse() throws InterruptedException {
 		searchPOM.sendUserName("swapna");
 		searchPOM.sendPassword("swapna");
