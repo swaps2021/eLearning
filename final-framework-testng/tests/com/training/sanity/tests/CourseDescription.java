@@ -44,13 +44,17 @@ public class CourseDescription {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
+	@Test //Test for Entering Course Description
 	public void courseDescription() throws InterruptedException {
+		//Passing login details
 		coursePOM.sendUserName("swapna");
 		coursePOM.sendPassword("swapna");
-		coursePOM.clickLoginBtn(); 
-		coursePOM.coursePage();
+		coursePOM.clickLoginBtn();
+		
+		coursePOM.coursePage(); //Calling method to enter CoursePage from CourseDescPOM
 		screenShot.captureScreenShot("CoursePage");
+		
+		//Passing course title and description to method
 		coursePOM.enterCourseDesc("Selenium-WebDriver","This is Selenium Webdriver Course");
 		Thread.sleep(5000);
 		screenShot.captureScreenShot("CourseDescriptionSaved");
