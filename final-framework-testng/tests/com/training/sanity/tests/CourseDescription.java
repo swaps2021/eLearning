@@ -44,7 +44,7 @@ public class CourseDescription {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test //Test for Entering Course Description
+	@Test //Test to verify whether application allows teacher to enter course description
 	public void courseDescription() throws InterruptedException {
 		//Passing login details
 		coursePOM.sendUserName("swapna");
