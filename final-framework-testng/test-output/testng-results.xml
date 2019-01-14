@@ -1,89 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27358" started-at="2018-12-18T18:16:26Z" finished-at="2018-12-18T18:16:53Z">
+  <suite name="Sample test Suite" duration-ms="154748" started-at="2019-01-14T13:09:26Z" finished-at="2019-01-14T13:12:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27358" started-at="2018-12-18T18:16:26Z" finished-at="2018-12-18T18:16:53Z">
-      <class name="com.training.regression.tests.LoginExcelTest">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="setUpBeforeClass" is-config="true" duration-ms="15" started-at="2018-12-18T23:46:26Z" finished-at="2018-12-18T23:46:26Z">
+    <test name="ELTC_006" duration-ms="14352" started-at="2019-01-14T13:09:26Z" finished-at="2019-01-14T13:09:40Z">
+      <class name="com.training.sanity.tests.TeacherLoginTest">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.TeacherLoginTest@91161c7]" name="setUpBeforeClass" is-config="true" duration-ms="10" started-at="2019-01-14T13:09:26Z" finished-at="2019-01-14T13:09:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="setUp" is-config="true" duration-ms="5796" started-at="2018-12-18T23:46:27Z" finished-at="2018-12-18T23:46:32Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.TeacherLoginTest@91161c7]" name="setUp" is-config="true" duration-ms="9088" started-at="2019-01-14T13:09:26Z" finished-at="2019-01-14T13:09:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginDBTest(java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="loginDBTest" duration-ms="2700" started-at="2018-12-18T23:46:32Z" data-provider="excel-inputs" finished-at="2018-12-18T23:46:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[hello]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin@123]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.TeacherLoginTest@91161c7]" name="validLoginTest" duration-ms="3449" started-at="2019-01-14T13:09:35Z" finished-at="2019-01-14T13:09:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginDBTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="tearDown" is-config="true" duration-ms="788" started-at="2018-12-18T23:46:35Z" finished-at="2018-12-18T23:46:36Z">
+        </test-method> <!-- validLoginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.TeacherLoginTest@91161c7]" name="tearDown" is-config="true" duration-ms="1777" started-at="2019-01-14T13:09:39Z" finished-at="2019-01-14T13:09:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="setUp" is-config="true" duration-ms="4885" started-at="2018-12-18T23:46:36Z" finished-at="2018-12-18T23:46:41Z">
+      </class> <!-- com.training.sanity.tests.TeacherLoginTest -->
+    </test> <!-- ELTC_006 -->
+    <test name="ELTC_007" duration-ms="40102" started-at="2019-01-14T13:09:40Z" finished-at="2019-01-14T13:10:21Z">
+      <class name="com.training.sanity.tests.CreateNewCourse">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.CreateNewCourse@42dafa95]" name="setUpBeforeClass" is-config="true" duration-ms="0" started-at="2019-01-14T13:09:40Z" finished-at="2019-01-14T13:09:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.CreateNewCourse@42dafa95]" name="setUp" is-config="true" duration-ms="7184" started-at="2019-01-14T13:09:40Z" finished-at="2019-01-14T13:09:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginDBTest(java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="loginDBTest" duration-ms="3104" started-at="2018-12-18T23:46:41Z" data-provider="excel-inputs" finished-at="2018-12-18T23:46:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[naveen]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[testing@123]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="newCourseAdd()[pri:0, instance:com.training.sanity.tests.CreateNewCourse@42dafa95]" name="newCourseAdd" duration-ms="31003" started-at="2019-01-14T13:09:48Z" finished-at="2019-01-14T13:10:19Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginDBTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="tearDown" is-config="true" duration-ms="767" started-at="2018-12-18T23:46:44Z" finished-at="2018-12-18T23:46:45Z">
+        </test-method> <!-- newCourseAdd -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.CreateNewCourse@42dafa95]" name="tearDown" is-config="true" duration-ms="1912" started-at="2019-01-14T13:10:19Z" finished-at="2019-01-14T13:10:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="setUp" is-config="true" duration-ms="5306" started-at="2018-12-18T23:46:45Z" finished-at="2018-12-18T23:46:50Z">
+      </class> <!-- com.training.sanity.tests.CreateNewCourse -->
+    </test> <!-- ELTC_007 -->
+    <test name="ELTC_008" duration-ms="43778" started-at="2019-01-14T13:10:21Z" finished-at="2019-01-14T13:11:04Z">
+      <class name="com.training.sanity.tests.CourseDescription">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.CourseDescription@7085bdee]" name="setUpBeforeClass" is-config="true" duration-ms="4" started-at="2019-01-14T13:10:21Z" finished-at="2019-01-14T13:10:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.CourseDescription@7085bdee]" name="setUp" is-config="true" duration-ms="9336" started-at="2019-01-14T13:10:21Z" finished-at="2019-01-14T13:10:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginDBTest(java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="loginDBTest" duration-ms="2595" started-at="2018-12-18T23:46:50Z" data-provider="excel-inputs" finished-at="2018-12-18T23:46:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[delete]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[delete]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="courseDescription()[pri:0, instance:com.training.sanity.tests.CourseDescription@7085bdee]" name="courseDescription" duration-ms="32549" started-at="2019-01-14T13:10:30Z" finished-at="2019-01-14T13:11:03Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginDBTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.LoginExcelTest@8bd1b6a]" name="tearDown" is-config="true" duration-ms="795" started-at="2018-12-18T23:46:53Z" finished-at="2018-12-18T23:46:53Z">
+        </test-method> <!-- courseDescription -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.CourseDescription@7085bdee]" name="tearDown" is-config="true" duration-ms="1884" started-at="2019-01-14T13:11:03Z" finished-at="2019-01-14T13:11:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.regression.tests.LoginExcelTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.training.sanity.tests.CourseDescription -->
+    </test> <!-- ELTC_008 -->
+    <test name="ELTC_009" duration-ms="35455" started-at="2019-01-14T13:11:05Z" finished-at="2019-01-14T13:11:40Z">
+      <class name="com.training.sanity.tests.unSubscribeUser">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.unSubscribeUser@3f49dace]" name="setUpBeforeClass" is-config="true" duration-ms="7" started-at="2019-01-14T13:11:05Z" finished-at="2019-01-14T13:11:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.unSubscribeUser@3f49dace]" name="setUp" is-config="true" duration-ms="7729" started-at="2019-01-14T13:11:05Z" finished-at="2019-01-14T13:11:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="unSubscribeuser()[pri:0, instance:com.training.sanity.tests.unSubscribeUser@3f49dace]" name="unSubscribeuser" duration-ms="25825" started-at="2019-01-14T13:11:12Z" finished-at="2019-01-14T13:11:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unSubscribeuser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.unSubscribeUser@3f49dace]" name="tearDown" is-config="true" duration-ms="1886" started-at="2019-01-14T13:11:38Z" finished-at="2019-01-14T13:11:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.unSubscribeUser -->
+    </test> <!-- ELTC_009 -->
+    <test name="ELTC_010" duration-ms="20713" started-at="2019-01-14T13:11:40Z" finished-at="2019-01-14T13:12:01Z">
+      <class name="com.training.sanity.tests.searchCourse">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.searchCourse@6e1567f1]" name="setUpBeforeClass" is-config="true" duration-ms="0" started-at="2019-01-14T13:11:40Z" finished-at="2019-01-14T13:11:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.searchCourse@6e1567f1]" name="setUp" is-config="true" duration-ms="7313" started-at="2019-01-14T13:11:40Z" finished-at="2019-01-14T13:11:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="searchCourse()[pri:0, instance:com.training.sanity.tests.searchCourse@6e1567f1]" name="searchCourse" duration-ms="11545" started-at="2019-01-14T13:11:47Z" finished-at="2019-01-14T13:11:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchCourse -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.searchCourse@6e1567f1]" name="tearDown" is-config="true" duration-ms="1848" started-at="2019-01-14T13:11:59Z" finished-at="2019-01-14T13:12:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.searchCourse -->
+    </test> <!-- ELTC_010 -->
+  </suite> <!-- Sample test Suite -->
 </testng-results>

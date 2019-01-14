@@ -2,9 +2,29 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name = "Sample test Suite">
-   <test name = "Sample test">
+   <test name = "ELTC_006">
       <classes>
-         <class name = "com.training.sanity.tests.LoginTests" />
+         <class name = "com.training.sanity.tests.TeacherLoginTest" />
+      </classes>
+   </test>
+   <test name = "ELTC_007">
+      <classes>
+         <class name = "com.training.sanity.tests.CreateNewCourse" />
+      </classes>
+   </test>
+   <test name = "ELTC_008">
+      <classes>
+         <class name = "com.training.sanity.tests.CourseDescription" />
+      </classes>
+   </test>
+   <test name = "ELTC_009">
+      <classes>
+         <class name = "com.training.sanity.tests.unSubscribeUser" />
+      </classes>
+   </test>
+	<test name = "ELTC_010">
+      <classes>
+         <class name = "com.training.sanity.tests.searchCourse" />
       </classes>
    </test>
 </suite>	
