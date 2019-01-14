@@ -41,25 +41,26 @@ private WebDriver driver;
 	}
 	
 	
-	
+	//This method will navigate to the User list page for the selected Course
 	public void courseUser()
 	{
 		driver.findElement(By.linkText("My courses")).click();
-		driver.findElement(By.linkText("Selenium - Unsubscribe Test")).click();
+		driver.findElement(By.linkText("Selenium - Unsubscribe Test")).click();//Enter Course Page
 		//driver.findElement(By.xpath("//*[@id=\"toolimage_5343\"]")).click();
-		driver.findElement(By.partialLinkText("Users")).click();
-		driver.findElement(By.linkText("Learners")).click();
+		driver.findElement(By.partialLinkText("Users")).click();//clicking on users Icon
+		driver.findElement(By.linkText("Learners")).click();//Learners Tab
 	}
 	
+	//This Method will unsubscribe the selected user from the Learners Tab
 	public String unSubscribeUser() throws InterruptedException
 	{
-		driver.findElement(By.xpath("//input[@name='user[]']")).click();
+		driver.findElement(By.xpath("//input[@name='user[]']")).click();//Click on checkbox against the username
 		//driver.findElement(By.xpath("//a[contains(text(),'Unsubscribe')]")).click();
-		driver.findElement(By.linkText("Unsubscribe")).click();
+		driver.findElement(By.linkText("Unsubscribe")).click();//click unsubscribe button
 		Thread.sleep(3000);
-		driver.switchTo().alert().accept();
+		driver.switchTo().alert().accept();// Clicking OK for Alert Window
 		//String uscribe = "User is now unsubscribed";
-		String actual = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
+		String actual = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();//Extracting Message
 		//assertEquals(uscribe,actual);
 		return actual;
 		}
