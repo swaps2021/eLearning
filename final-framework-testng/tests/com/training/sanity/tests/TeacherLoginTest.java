@@ -50,13 +50,14 @@ public class TeacherLoginTest {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
+	@Test //This test will check the welcome text after user-Teacher logs-in
 	public void validLoginTest() {
+		//Pass Login credentials
 		loginPOM.sendUserName("tester1");
 		loginPOM.sendPassword("tester1");
 		loginPOM.clickLoginBtn(); 
 		screenShot.captureScreenShot("TeacherHomePage");
-		Boolean welcomeText = loginPOM.checkWelcomeText();
+		Boolean welcomeText = loginPOM.checkWelcomeText();// Verifying the welcome text
 		if(welcomeText)
 			System.out.println("Hello tester1 tester1 and welcome");
 		else
