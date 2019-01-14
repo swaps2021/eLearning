@@ -42,13 +42,14 @@ private WebDriver driver;
 	}
 	
 	
-	
+	//This method will search for the desired course
 	public void searchCourse() throws InterruptedException
 	{
 		driver.findElement(By.linkText("Course catalog")).click();
-		driver.findElement(By.name("search_term")).sendKeys("Selenium");
+		driver.findElement(By.name("search_term")).sendKeys("Selenium"); //Passing search criteria in the search text area
 		driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/div[1]/div/div/div[1]/form/div/div/button/em")).click();
-	
+		
+		//For navigating through Pagination
 		//List<WebElement> courses;
 		//int size;
 		//List<WebElement> pages = driver.findElements(By.xpath("//*[@id=\"content-section\"]/div/div/nav/ul/li"));
