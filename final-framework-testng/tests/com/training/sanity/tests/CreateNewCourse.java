@@ -46,7 +46,7 @@ public class CreateNewCourse {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
+	@Test //Test to verify whether application allows Teacher to Add a new course
 	public void newCourseAdd() throws InterruptedException {
 		//Passing Login credentials
 		loginPOM.sendUserName("swapna");
