@@ -37,9 +37,10 @@ private WebDriver driver;
 		this.loginBtn.click(); 
 	}
 	
+	//This method will check the welcome text in HomePage after Teacher Login
 	public boolean checkWelcomeText() {
 		String hometext = driver.findElement(By.id("homepage-course")).getText();
-		return hometext.startsWith("Hello tester1 tester1 and welcome");
+		return hometext.startsWith("Hello tester1 tester1 and welcome");// Extracting the desired welcome text from the page
 			}
 }
 
