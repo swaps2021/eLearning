@@ -18,7 +18,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 
-public class CreateNewCourse {
+public class CreateNewCourse { 
 	private WebDriver driver;
 	private String baseUrl;
 	private NewCoursePOM loginPOM;
@@ -48,14 +48,16 @@ public class CreateNewCourse {
 	}
 	@Test
 	public void newCourseAdd() throws InterruptedException {
+		//Passing Login credentials
 		loginPOM.sendUserName("swapna");
 		loginPOM.sendPassword("swapna");
 		loginPOM.clickLoginBtn(); 
-		//screenShot.captureScreenShot("TeacherHomePage");
+		
+		//Passing Course title, code and category for creating a new course
 		loginPOM.createNewCourse("Selenium","Projects","s03311");
 		Thread.sleep(5000);
 		screenShot.captureScreenShot("Create This Course Button Click");
-		loginPOM.courseIntro("This is Selenium Course...");
+		loginPOM.courseIntro("This is Selenium Course...");//Passing course intro text
 		Thread.sleep(5000);
 		screenShot.captureScreenShot("CourseIntroTextSaved");
 		
