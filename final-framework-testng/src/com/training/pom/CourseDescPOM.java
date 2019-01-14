@@ -38,27 +38,29 @@ private WebDriver driver;
 		this.loginBtn.click(); 
 	}
 	
-	public void coursePage()
+	//This method will click on the desired course and navigate to Course Details page
+	public void coursePage() 
 	{
 		driver.findElement(By.linkText("My courses")).click();
 		driver.findElement(By.linkText("Selenium")).click();
 		driver.findElement(By.linkText("Course description")).click();
 	}
 	
+	// This method will enter course title and description and Save it. It takes 2 parameters title & description.
 	public void enterCourseDesc(String title,String description) throws InterruptedException
 	{
 		driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/a[1]/img")).click();
 		driver.findElement(By.id("course_description_title")).clear();
-		driver.findElement(By.id("course_description_title")).sendKeys(title);
+		driver.findElement(By.id("course_description_title")).sendKeys(title);//pass Course title here
 		Thread.sleep(5000);
-		driver.switchTo().frame(0);
+		driver.switchTo().frame(0); // Switching to text editor frame
 		WebElement tEditor = driver.switchTo().activeElement();
 		new Actions(driver).moveToElement(tEditor).perform();
 		driver.findElement(By.xpath("/html/body")).clear();
-		driver.findElement(By.xpath("/html/body")).sendKeys(description);
-		driver.switchTo().window(driver.getWindowHandle());
+		driver.findElement(By.xpath("/html/body")).sendKeys(description);//pass course description here
+		driver.switchTo().window(driver.getWindowHandle()); // swtiching back to page from editor frame
 		Thread.sleep(5000);
-		driver.findElement(By.id("course_description_submit")).click();
+		driver.findElement(By.id("course_description_submit")).click(); //Submitting the changes
 	
 	}
 }
