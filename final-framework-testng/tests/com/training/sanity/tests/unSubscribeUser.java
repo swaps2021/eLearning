@@ -45,17 +45,19 @@ public class unSubscribeUser {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
+	@Test //This test will verify if a teacher can unsubscribe a registered user from course
 	public void unSubscribeuser() throws InterruptedException {
+		//Pass login credentials
 		uScribePOM.sendUserName("swapna");
 		uScribePOM.sendPassword("swapna");
 		uScribePOM.clickLoginBtn(); 
-		uScribePOM.courseUser();
+		
+		uScribePOM.courseUser();//Calling the method to view course registered users
 		Thread.sleep(5000);
 		screenShot.captureScreenShot("CourseUserSnapshot");
-		String actual = uScribePOM.unSubscribeUser();
+		String actual = uScribePOM.unSubscribeUser(); //Calling method to unsubscribe a registered user
 		String uscribe = "User is now unsubscribed";
-		assertEquals(uscribe,actual);
+		assertEquals(uscribe,actual);//Verifying message after successfully unsubscribing a user
 		Thread.sleep(5000);
 		screenShot.captureScreenShot("User Unsubscribed");
 		
