@@ -50,7 +50,7 @@ public class TeacherLoginTest {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test //This test will check the welcome text after user-Teacher logs-in
+	@Test //This test will verify the welcome text after user-Teacher logs-in
 	public void validLoginTest() {
 		//Pass Login credentials
 		loginPOM.sendUserName("tester1");
