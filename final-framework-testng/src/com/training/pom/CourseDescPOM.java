@@ -58,7 +58,7 @@ private WebDriver driver;
 		new Actions(driver).moveToElement(tEditor).perform();
 		driver.findElement(By.xpath("/html/body")).clear();
 		driver.findElement(By.xpath("/html/body")).sendKeys(description);//pass course description here
-		driver.switchTo().window(driver.getWindowHandle()); // swtiching back to page from editor frame
+		driver.switchTo().window(driver.getWindowHandle()); // switching back to page from editor frame
 		Thread.sleep(5000);
 		driver.findElement(By.id("course_description_submit")).click(); //Submitting the changes
 	
