@@ -63,7 +63,7 @@ private WebDriver driver;
 	@FindBy(linkText="Unsubscribe")
 	private WebElement unsubscribe;
 	
-	@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/div[2]")
+	@FindBy(xpath="/html/body/div[1]/section/div/div[2]")
 	private WebElement successMesg;
 	
 	//This Method will unsubscribe the selected user from the Learners Tab

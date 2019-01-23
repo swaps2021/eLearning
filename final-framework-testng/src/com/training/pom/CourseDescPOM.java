@@ -56,7 +56,7 @@ private WebDriver driver;
 		this.courseDescrIcon.click();
 	}
 	
-	@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/div[2]/a[1]/img")
+	@FindBy(xpath="/html/body/div[1]/section/div/div[2]/a[1]/img")
 	private WebElement descrIcon;
 	
 	@FindBy(id="course_description_title")

@@ -75,7 +75,7 @@ public class GenReportPOM {
 				return false;
 		}
 		
-		@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/div[4]/table")
+		@FindBy(xpath="//*[@id=\"content-section\"]/div/div[4]/table")
 		private WebElement coursesTable;
 		
 		@FindBy(xpath="/html/body/div[1]/section/div/div[4]/table/tbody/tr[4]/td[7]/a/img")
@@ -107,7 +107,7 @@ public class GenReportPOM {
 		@FindBy(xpath="/html/body/div[1]/section/div/div[1]/ul/li[4]")
 		private WebElement lcdPageInfo;
 		
-		@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/div[4]")
+		@FindBy(xpath="//*[@id=\"content-section\"]/div/div[4]")
 		private WebElement div1;
 		
 		//This method will verify contents of "learner Course Details Page" and click on Test attempted

@@ -54,11 +54,11 @@ public class CreateNewCourse {
 		loginPOM.clickLoginBtn(); 
 		
 		//Passing Course title, code and category for creating a new course
-		loginPOM.createNewCourse("Selenium","Projects","s03311");
+		loginPOM.createNewCourse("Selenium2028","Projects","s02028");
 		Thread.sleep(5000);
 		screenShot.captureScreenShot("Create This Course Button Click");
-		loginPOM.courseIntro("This is Selenium Course...");//Passing course intro text
-		Thread.sleep(5000);
+		loginPOM.courseIntro("This is Selenium New Course...");//Passing course intro text
+		//Thread.sleep(5000);
 		screenShot.captureScreenShot("CourseIntroTextSaved");
 		
 	}

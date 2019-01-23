@@ -1,6 +1,9 @@
 package com.training.pom;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -11,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class NewCoursePOM {
 private WebDriver driver; 
-	
+private JavascriptExecutor js;
 	public NewCoursePOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
@@ -49,24 +52,35 @@ private WebDriver driver;
 	@FindBy(id="advanced_params")
 	private WebElement advParams;
 	
-	@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/section[2]/form/fieldset/div[3]/div[1]/div[1]/div/button")
-	private WebElement projCateg;
+	@FindBy(xpath="//*[@id=\"advanced_params_options\"]/div[1]/div[1]/div/button")
+	private WebElement projCategButton;
 	
 	@FindBy(id="add_course_wanted_code")
 	private WebElement courseCode;
 	
-	@FindBy(id="add_course_submit")
+	@FindBy(xpath="//*[@id=\"add_course_submit\"]")
 	private WebElement courseSubmit;
 	
+	@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/section[2]/form/fieldset/div[4]/div[1]")
+	private WebElement dv;
+	
 	//This method will create a new course with the 3 parameters passed: title, category and code
-	public void createNewCourse(String title,String category, String code)
+	public void createNewCourse(String title,String category, String code) throws InterruptedException
 	{
+		js = (JavascriptExecutor) driver;
 		this.newCourse.click();
 		this.coursTitle.sendKeys(title);
 		this.advParams.click();
-		this.projCateg.click();//Capture the 3rd option(Projects)
+		WebElement categList = this.projCategButton.findElement(By.xpath("//*[@id=\"advanced_params_options\"]/div[1]/div[1]/div/div/ul"));//Capture the 3rd option(Projects)
+		List<WebElement> options = categList.findElements(By.xpath("//*[@id=\"advanced_params_options\"]/div[1]/div[1]/div/div/ul/li[3]/a/span[1]"));
+		System.out.println(options.size());
+		Thread.sleep(3000);
 		this.courseCode.sendKeys(code);
-		this.courseSubmit.click(); //Submit for creating new course
+		WebElement submitButton = this.dv.findElement(By.id("add_course_submit"));
+		js.executeScript("arguments[0].scrollIntoView();", submitButton);
+		submitButton.click();
+		//this.courseSubmit.click(); //Submit for creating new course
+		Thread.sleep(5000);
 	}
 	
 	@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/section/div/div[1]/div/div[1]/a/em")

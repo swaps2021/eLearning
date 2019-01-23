@@ -92,7 +92,7 @@ public class NewProjectPOM {
 		public Boolean welcomeMessage()
 		{
 			WebElement table1 = this.d1.findElement(By.tagName("table"));
-			WebElement row = table1.findElement(By.linkText("e-Learning3"));
+			WebElement row = table1.findElement(By.linkText("e-Learning7"));
 			row.click();
 			String wMesg = this.welcomeMesg.getText();
 			if (wMesg.matches("Welcome !"))
@@ -162,7 +162,7 @@ public class NewProjectPOM {
 		private WebElement assignSubmit;
 		
 		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/div[2]")
-		private WebElement submitMessage;
+		private WebElement submitMessage2;
 		
 		//This method will assign a new Role to a project member
 				public Boolean assignRole()
@@ -170,7 +170,7 @@ public class NewProjectPOM {
 					this.assignRole.click();
 					this.assignSubmit.click();
 					System.out.println("Role Assigned - Submitted");
-					String mesg = this.submitMesg.getText();
+					String mesg = this.submitMessage2.getText();
 					if(mesg.matches("The task has been assigned."))
 						return true;
 					else

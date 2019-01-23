@@ -69,7 +69,7 @@ private JavascriptExecutor js;
 		this.arrow.click();
 	}
 	
-	@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/h3")
+	@FindBy(xpath="//*[@id=\"content-section\"]/div/h3")
 	private WebElement studentName; 
 	
 	@FindBy(xpath="/html/body/div[1]/section/div/div[4]/table/tbody/tr/td[1]")

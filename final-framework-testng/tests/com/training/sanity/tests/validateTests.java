@@ -47,8 +47,8 @@ public class validateTests {
 	}
 	
 	
-	@Test //This test will verify if a teacher can validate a test submittedt by a learner
-	public void validateTests() throws InterruptedException {
+	@Test //This test will verify if a teacher can validate a test submitted by a learner
+	public void validateTest() throws InterruptedException {
 		//Pass login credentials
 		vTestPOM.sendUserName("vinodd");
 		vTestPOM.sendPassword("vinodd");

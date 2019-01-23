@@ -41,7 +41,7 @@ private WebDriver driver;
 	@FindBy(name="search_term")
 	private WebElement searchText;
 	
-	@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/div[2]/div[1]/div/div/div[1]/form/div/div/button/em")
+	@FindBy(xpath="//*[@id=\"content-section\"]/div/div[2]/div[1]/div/div/div[1]/form/div/div/button")
 	private WebElement searchButton;
 	
 	//This method will search for the desired course

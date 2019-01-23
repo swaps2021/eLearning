@@ -54,7 +54,7 @@ public class creatNewProject {
 		newPrjPOM.clickLoginBtn(); 
 		
 		//Enter the course Page and create a new Project
-		Boolean actual1 = newPrjPOM.createProj("e-Learning3", "This is New Project");
+		Boolean actual1 = newPrjPOM.createProj("e-Learning7", "This is New Project");
 		Boolean expected1 = true;
 		assertEquals(actual1,expected1); 
 		System.out.println("Project Created");

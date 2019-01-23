@@ -57,7 +57,7 @@ public class newGroup {
 		groupPOM.enterCourse();
 		System.out.println("enterCourse() - PASS");
 		//verify if new Group can be created
-		String createGrp = groupPOM.createGroup("Rock5");
+		String createGrp = groupPOM.createGroup("Rock6");
 		assertEquals(createGrp,"group(s) has (have) been added");
 		System.out.println("createGroup()- PASS");
 		

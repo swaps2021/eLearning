@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="51175" started-at="2019-01-22T19:04:27Z" finished-at="2019-01-22T19:05:18Z">
+  <suite name="Default suite" duration-ms="84057" started-at="2019-01-23T12:16:49Z" finished-at="2019-01-23T12:18:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="51175" started-at="2019-01-22T19:04:27Z" finished-at="2019-01-22T19:05:18Z">
+    <test name="Default test" duration-ms="84057" started-at="2019-01-23T12:16:49Z" finished-at="2019-01-23T12:18:13Z">
       <class name="com.training.sanity.tests.creatNewProject">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="setUpBeforeClass" is-config="true" duration-ms="11" started-at="2019-01-22T19:04:27Z" finished-at="2019-01-22T19:04:27Z">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="setUpBeforeClass" is-config="true" duration-ms="13" started-at="2019-01-23T12:16:49Z" finished-at="2019-01-23T12:16:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="setUp" is-config="true" duration-ms="9783" started-at="2019-01-22T19:04:27Z" finished-at="2019-01-22T19:04:37Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="setUp" is-config="true" duration-ms="11078" started-at="2019-01-23T12:16:49Z" finished-at="2019-01-23T12:17:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="projectNew()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="projectNew" duration-ms="39593" started-at="2019-01-22T19:04:37Z" finished-at="2019-01-22T19:05:17Z">
+        <test-method status="PASS" signature="projectNew()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="projectNew" duration-ms="71078" started-at="2019-01-23T12:17:00Z" finished-at="2019-01-23T12:18:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- projectNew -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="tearDown" is-config="true" duration-ms="1778" started-at="2019-01-22T19:05:17Z" finished-at="2019-01-22T19:05:18Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="tearDown" is-config="true" duration-ms="1859" started-at="2019-01-23T12:18:11Z" finished-at="2019-01-23T12:18:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

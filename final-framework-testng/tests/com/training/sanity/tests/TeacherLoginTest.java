@@ -3,7 +3,6 @@ package com.training.sanity.tests;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.LoginPOM;
 import com.training.pom.TeachLoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
@@ -19,7 +18,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 
 public class TeacherLoginTest {
 	private WebDriver driver;
@@ -57,11 +55,9 @@ public class TeacherLoginTest {
 		loginPOM.sendPassword("tester1");
 		loginPOM.clickLoginBtn(); 
 		screenShot.captureScreenShot("TeacherHomePage");
-		Boolean welcomeText = loginPOM.checkWelcomeText();// Verifying the welcome text
-		if(welcomeText)
-			System.out.println("Hello tester1 tester1 and welcome");
-		else
-			System.out.println("Incorrect Message on Home Page");
+		Boolean actual = loginPOM.checkWelcomeText();// Verifying the welcome text
+		Boolean expected = true;
+		assertEquals(actual,expected);
 		
 	}
 	
