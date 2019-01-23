@@ -40,20 +40,37 @@ private WebDriver driver;
 		this.loginBtn.click(); 
 	}
 	
+	@FindBy(linkText="My courses")
+	private WebElement myCourses;
+	
+	@FindBy(linkText="Selenium - Tests")
+	private WebElement courseName;
+	
+	@FindBy(linkText="Tests")
+	private WebElement testsIcon;
+	
+	@FindBy(css="img[alt=\"Results and feedback\"]")
+	private WebElement rfIcon;
+	
 	//This method will navigate to the course tests page and select the Test to Validate
 	public void enterCourseTests() throws InterruptedException 
 	{
-		driver.findElement(By.linkText("My courses")).click();
-		driver.findElement(By.linkText("Selenium - Tests")).click();
-		driver.findElement(By.linkText("Tests")).click();
-		driver.findElement(By.cssSelector("img[alt=\"Results and feedback\"]")).click();
+		this.myCourses.click();
+		this.courseName.click();
+		this.testsIcon.click();
+		this.rfIcon.click();//Click on Results and feedback icon against the Test
 		Thread.sleep(5000);
 	}
+	
+	@FindBy(name="send_notification")
+	private WebElement sendCheckBox;
+	
+	@FindBy(xpath="//*[@id=\"notification_content\"]")
+	private WebElement emailBody;
 	
 	// This method will validate the Test submitted by a learner and return the email message contents
 	public String validateTest() throws InterruptedException
 	{
-		
 		List<WebElement> rows = driver.findElements(By.xpath("//*[@id=\"results\"]/tbody/tr"));
 		Boolean status = false;
 		String val = "Not validated";
@@ -68,21 +85,24 @@ private WebDriver driver;
 				
 			}
 		}
-		
-		driver.findElement(By.name("send_notification")).click();
+		this.sendCheckBox.click();
 		Thread.sleep(5000);
 		
-		//Extract email contents from textEditor
-		WebElement textArea = driver.findElement(By.xpath("//*[@id=\"notification_content\"]"));
-		String eText = textArea.getAttribute("value");
+		String eText = this.emailBody.getAttribute("value");//Extract email contents from textEditor
 		return eText;
 		}
 	
-	//This method will send the email and return the message
+	@FindBy(xpath="//*[@id=\"myform_submit\"]")
+	private WebElement emailSubmit;
+	
+	@FindBy(xpath="//*[@id=\"content-section\"]/div/div[2]")
+	private WebElement sentMessage;
+	
+	//This method will send the email and return the success message
 	public String sendEmail() 
 	{
-		driver.findElement(By.xpath("//*[@id=\"myform_submit\"]")).click();
-		String mesg = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
+		this.emailSubmit.click();
+		String mesg = this.sentMessage.getText();
 		return mesg;
 	}
 }

@@ -1,11 +1,7 @@
 package com.training.pom;
-
-import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -40,29 +36,45 @@ private WebDriver driver;
 		this.loginBtn.click(); 
 	}
 	
+	@FindBy(linkText="My courses")
+	private WebElement mycourses;
+	
+	@FindBy(linkText="Selenium - Unsubscribe Test")
+	private WebElement courseName; 
+	
+	@FindBy(partialLinkText="Users")
+	private WebElement usersLink;
+	
+	@FindBy(linkText="Learners")
+	private WebElement learnersLink;
 	
 	//This method will navigate to the User list page for the selected Course
 	public void courseUser()
 	{
-		driver.findElement(By.linkText("My courses")).click();
-		driver.findElement(By.linkText("Selenium - Unsubscribe Test")).click();//Enter Course Page
-		//driver.findElement(By.xpath("//*[@id=\"toolimage_5343\"]")).click();
-		driver.findElement(By.partialLinkText("Users")).click();//clicking on users Icon
-		driver.findElement(By.linkText("Learners")).click();//Learners Tab
+		this.mycourses.click();
+		this.courseName.click();//Enter Course Page
+		this.usersLink.click();//clicking on users Icon
+		this.learnersLink.click();//Enter Learners Tab
 	}
+	
+	@FindBy(xpath="//input[@name='user[]']")
+	private WebElement userCheckBox;
+	
+	@FindBy(linkText="Unsubscribe")
+	private WebElement unsubscribe;
+	
+	@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/div[2]")
+	private WebElement successMesg;
 	
 	//This Method will unsubscribe the selected user from the Learners Tab
 	public String unSubscribeUser() throws InterruptedException
 	{
-		driver.findElement(By.xpath("//input[@name='user[]']")).click();//Click on checkbox against the username
-		//driver.findElement(By.xpath("//a[contains(text(),'Unsubscribe')]")).click();
-		driver.findElement(By.linkText("Unsubscribe")).click();//click unsubscribe button
+		this.userCheckBox.click();//Click on checkbox against the username
+		this.unsubscribe.click();//click unsubscribe button
 		Thread.sleep(3000);
 		driver.switchTo().alert().accept();// Clicking OK for Alert Window
-		//String uscribe = "User is now unsubscribed";
-		String actual = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();//Extracting Message
-		//assertEquals(uscribe,actual);
-		return actual;
+		String actual = this.successMesg.getText();//Extracting Message
+		return actual; //returning the message text
 		}
 
 }

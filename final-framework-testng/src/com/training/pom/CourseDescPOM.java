@@ -38,20 +38,39 @@ private WebDriver driver;
 		this.loginBtn.click(); 
 	}
 	
-	//This method will click on the desired course and navigate to Course Details page
+	
+	@FindBy(linkText="My courses")
+	private WebElement myCourses; 
+	
+	@FindBy(linkText="Selenium")
+	private WebElement seleniumCourse; 
+	
+	@FindBy(linkText="Course description")
+	private WebElement courseDescrIcon;
+	
+	//This method will click on the desired course, then click on course Description Icon
 	public void coursePage() 
 	{
-		driver.findElement(By.linkText("My courses")).click();
-		driver.findElement(By.linkText("Selenium")).click();
-		driver.findElement(By.linkText("Course description")).click();
+		this.myCourses.click();
+		this.seleniumCourse.click();
+		this.courseDescrIcon.click();
 	}
+	
+	@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/div[2]/a[1]/img")
+	private WebElement descrIcon;
+	
+	@FindBy(id="course_description_title")
+	private WebElement descrTitle;
+	
+	@FindBy(id="course_description_submit")
+	private WebElement descrSubmit;
 	
 	// This method will enter course title and description and Save it. It takes 2 parameters title & description.
 	public void enterCourseDesc(String title,String description) throws InterruptedException
 	{
-		driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/a[1]/img")).click();
-		driver.findElement(By.id("course_description_title")).clear();
-		driver.findElement(By.id("course_description_title")).sendKeys(title);//pass Course title here
+		this.descrIcon.click();
+		this.descrTitle.clear();
+		this.descrTitle.sendKeys(title);//pass Course title here
 		Thread.sleep(5000);
 		driver.switchTo().frame(0); // Switching to text editor frame
 		WebElement tEditor = driver.switchTo().activeElement();
@@ -60,7 +79,7 @@ private WebDriver driver;
 		driver.findElement(By.xpath("/html/body")).sendKeys(description);//pass course description here
 		driver.switchTo().window(driver.getWindowHandle()); // switching back to page from editor frame
 		Thread.sleep(5000);
-		driver.findElement(By.id("course_description_submit")).click(); //Submitting the changes
+		this.descrSubmit.click(); //Submitting the changes
 	
 	}
 }

@@ -1,10 +1,4 @@
 package com.training.pom;
-
-import static org.testng.Assert.assertEquals;
-
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,13 +35,21 @@ private WebDriver driver;
 		this.loginBtn.click(); 
 	}
 	
+	@FindBy(linkText="Course catalog")
+	private WebElement courseCatalog; 
+	
+	@FindBy(name="search_term")
+	private WebElement searchText;
+	
+	@FindBy(xpath="//*[@id=\\\"content-section\\\"]/div/div[2]/div[1]/div/div/div[1]/form/div/div/button/em")
+	private WebElement searchButton;
 	
 	//This method will search for the desired course
 	public void searchCourse() throws InterruptedException
 	{
-		driver.findElement(By.linkText("Course catalog")).click();
-		driver.findElement(By.name("search_term")).sendKeys("Selenium"); //Passing search criteria in the search text area
-		driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/div[1]/div/div/div[1]/form/div/div/button/em")).click();
+		this.courseCatalog.click();
+		this.searchText.sendKeys("Selenium"); //Passing search criteria in the search text area
+		this.searchButton.click();
 		
 		//For navigating through Pagination
 		//List<WebElement> courses;

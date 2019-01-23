@@ -3,7 +3,6 @@ package com.training.pom;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class NewProjectPOM {
 	private WebDriver driver;
-	private JavascriptExecutor js;
 		
 		public NewProjectPOM(WebDriver driver) {
 			this.driver = driver; 
@@ -41,86 +39,154 @@ public class NewProjectPOM {
 			this.loginBtn.click(); 
 		}
 		
-		//This method will allow Teacher to create a New Project
+		@FindBy(linkText="My courses")
+		private WebElement myCourses;
+		
+		@FindBy(linkText="Selenium - Tests")
+		private WebElement courseName;
+		
+		@FindBy(linkText="Projects")
+		private WebElement projectsLink;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/a/img")
+		private WebElement createProjIcon;
+		
+		@FindBy(xpath="//*[@id=\"add_blog_blog_name\"]")
+		private WebElement projTitle;
+		
+		@FindBy(xpath="//*[@id=\"add_blog_blog_subtitle\"]")
+		private WebElement projSubTitle;
+		
+		@FindBy(xpath="//*[@id=\"add_blog_submit\"]")
+		private WebElement submitBlog;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[3]")
+		private WebElement submitMesg;
+		
+		//This method will allow Teacher to create a New Project from Course Page
 		public Boolean createProj(String pTitle, String pSubtitle) throws InterruptedException 
 		{
-			driver.findElement(By.linkText("My courses")).click();
-			driver.findElement(By.linkText("Selenium - Tests")).click();
-			driver.findElement(By.linkText("Projects")).click();
-			driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/a/img")).click();
+			this.myCourses.click();
+			this.courseName.click();
+			this.projectsLink.click();
+			this.createProjIcon.click();
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//*[@id=\"add_blog_blog_name\"]")).sendKeys(pTitle);
-			driver.findElement(By.xpath("//*[@id=\"add_blog_blog_subtitle\"]")).sendKeys(pSubtitle);
-			driver.findElement(By.xpath("//*[@id=\"add_blog_submit\"]")).click();
+			this.projTitle.sendKeys(pTitle);
+			this.projSubTitle.sendKeys(pSubtitle);
+			this.submitBlog.click();
 			Thread.sleep(3000);
-			String mesg = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[3]")).getText();
+			String mesg = this.submitMesg.getText();
 			if (mesg.matches("The project has been added."))
 				return true;
 			else
 				return false;
 		}
 		
-		//This method will create a new Task after click on the new Project link
+		@FindBy(xpath="//*[@id=\"content-section\"]/div/div[4]")
+		private WebElement d1;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/section/div/div[2]/div/div[2]/article/div/div/h3/a")
+		private WebElement welcomeMesg;
+		
+		//This method will validate the welcome message after clicking the project name link
 		public Boolean welcomeMessage()
 		{
-			WebElement div1 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]"));
-			WebElement table1 = div1.findElement(By.tagName("table"));
+			WebElement table1 = this.d1.findElement(By.tagName("table"));
 			WebElement row = table1.findElement(By.linkText("e-Learning3"));
 			row.click();
-			WebElement welcome = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/section/div/div[2]/div/div[2]/article/div/div/h3/a"));
-			String wMesg = welcome.getText();
+			String wMesg = this.welcomeMesg.getText();
 			if (wMesg.matches("Welcome !"))
 				return true;
 			else
 				return false;
 		}
 		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/div/div/div/a[2]/img")
+		private WebElement newTaskButton;
+		
+		@FindBy(xpath="//*[@id=\"add_post_title\"]")
+		private WebElement taskTitle;
+		
+		@FindBy(xpath="//*[@id=\"add_post_save\"]")
+		private WebElement saveTaskButton;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/div[2]")
+		private WebElement savedMessage;
+		
 		//This method will create a new Task inside the Project
 		public Boolean newTask(String title)
 		{
-			driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div/div/div/a[2]/img")).click();
-			driver.findElement(By.xpath("//*[@id=\"add_post_title\"]")).sendKeys(title);
-			driver.findElement(By.xpath("//*[@id=\"add_post_save\"]")).click();
-			String mesg = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div[2]")).getText();
+			this.newTaskButton.click();
+			this.taskTitle.sendKeys(title);
+			this.saveTaskButton.click();
+			String mesg = this.savedMessage.getText();
 			if(mesg.matches("The article has been added."))
 				return true;
 			else
 				return false;
 		}
 		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/div[1]/div/div/a[3]/img")
+		private WebElement rolesMgmntIcon;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/section/div/div/div/div/a[1]")
+		private WebElement addNewRoleIcon;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/section/div/div/div/form/div[1]/div/input")
+		private WebElement roleTitle;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/section/div/div/div/form/div[5]/div/button")
+		private WebElement saveRoleButton;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/div[2]")
+		private WebElement roleMessage;
+		
 		//This method will create a new Role inside the Project
 				public Boolean newRole(String title)
 				{
-					driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div[1]/div/div/a[3]/img")).click();
-					driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/section/div/div/div/div/a[1]")).click();
-					driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/section/div/div/div/form/div[1]/div/input")).sendKeys(title);
-					driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/section/div/div/div/form/div[5]/div/button")).click();
-					String mesg = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div[2]")).getText();
+					this.rolesMgmntIcon.click();
+					this.addNewRoleIcon.click();
+					this.roleTitle.sendKeys(title);
+					this.saveRoleButton.click();
+					String mesg = this.roleMessage.getText();
 					if(mesg.matches("The task has been created"))
 						return true;
 					else
 						return false;
 				}
 		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/section/div/div/div/div/a[2]")
+		private WebElement assignRole;	
+		
+		@FindBy(xpath="//*[@id=\"assign_task_submit\"]")
+		private WebElement assignSubmit;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/div[2]")
+		private WebElement submitMessage;
+		
 		//This method will assign a new Role to a project member
 				public Boolean assignRole()
 				{
-					driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/section/div/div/div/div/a[2]")).click();
-					//driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/section/div/div/div/form/fieldset/div[1]/div[1]/div/button/span[1]")).sendKeys("vinod d");
-					//driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/section/div/div/div/form/fieldset/div[1]/div[1]/div/div/ul/li/a/span[1]")).click();
-					driver.findElement(By.xpath("//*[@id=\"assign_task_submit\"]")).click();
+					this.assignRole.click();
+					this.assignSubmit.click();
 					System.out.println("Role Assigned - Submitted");
-					String mesg = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div[2]")).getText();
+					String mesg = this.submitMesg.getText();
 					if(mesg.matches("The task has been assigned."))
 						return true;
 					else
 						return false;
 				}
-				
-		//This method will subscribe a new user to project
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/div[1]/div/div/a[4]/img")
+		private WebElement usersMgmntIcon;
+		
+		@FindBy(xpath="/html/body/div[1]/section/div/div[2]/div/div[2]")
+		private WebElement registerMessage;
+		
+		//This method will subscribe/register a new user to project
 				public Boolean userMgmt()
 				{
-					driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div[1]/div/div/a[4]/img")).click();
+					this.usersMgmntIcon.click();
 					WebElement div2 = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/section/div/div/div"));
 					WebElement table2 = div2.findElement(By.tagName("table"));
 					List <WebElement> rows = table2.findElements(By.tagName("tr"));
@@ -136,8 +202,7 @@ public class NewProjectPOM {
 							break;
 						}
 					}
-					
-					String mesg = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div[2]")).getText();
+					String mesg = this.registerMessage.getText();
 					if(mesg.matches("The user has been registered"))
 						return true;
 					else

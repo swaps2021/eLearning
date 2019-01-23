@@ -1,6 +1,5 @@
 package com.training.pom;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,9 +36,12 @@ private WebDriver driver;
 		this.loginBtn.click(); 
 	}
 	
+	@FindBy(id="homepage-course")
+	private WebElement homePageText; 
+	
 	//This method will check the welcome text in HomePage after Teacher Login
 	public boolean checkWelcomeText() {
-		String hometext = driver.findElement(By.id("homepage-course")).getText();
+		String hometext = this.homePageText.getText();
 		return hometext.startsWith("Hello tester1 tester1 and welcome");// Extracting the desired welcome text from the page
 			}
 }
