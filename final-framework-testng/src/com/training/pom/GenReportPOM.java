@@ -104,7 +104,7 @@ public class GenReportPOM {
 			return course;
 		}
 		
-		@FindBy(xpath="/html/body/div[1]/section/div/div[1]/ul/li[4]")
+		@FindBy(xpath="//*[@id=\"page-breadcrumb\"]/ul/li[4]")
 		private WebElement lcdPageInfo;
 		
 		@FindBy(xpath="//*[@id=\"content-section\"]/div/div[4]")
@@ -117,7 +117,7 @@ public class GenReportPOM {
 			System.out.println("We are on Page: "+pageInfo);
 			WebElement table2 = this.div1.findElement(By.tagName("table"));
 			js.executeScript("arguments[0].scrollIntoView();", table2);// Scroll down till element is visible
-			String testName = table2.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]/table/tbody/tr/td[1]")).getText();
+			String testName = table2.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]/table/tbody/tr[1]/td[1]")).getText();
 			System.out.println("Clicking Test attempt for :"+testName);
 			Boolean tName = true;
 			if(testName.isEmpty())
@@ -125,7 +125,7 @@ public class GenReportPOM {
 				tName = false;
 			}
 			else
-			table2.findElement(By.xpath("//img[@alt='quiz.png']")).click(); // Clicking on Test Quiz Icon
+			table2.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]/table/tbody/tr[1]/td[5]/a/img")).click(); // Clicking on Test Quiz Icon
 			return tName;
 		}
 			

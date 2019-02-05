@@ -87,15 +87,89 @@ public class ApachePOIExcelRead {
 
 		return list1;
 	}
+	public  String [][] getExcelContent1(String fileName) {
+		int rowCount =0; 
+		String [][] list1 = null; 
+		
+		try {
+			System.out.println("File Name Got " + fileName);
+			FileInputStream file = new FileInputStream(new File(fileName));
+
+			// Create Workbook instance holding reference to .xlsx file
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+
+			// Get first/desired sheet from the workbook
+			XSSFSheet sheet = workbook.getSheetAt(2);
+			
+			int rowTotal = sheet.getLastRowNum();
+
+			if ((rowTotal > 0) || (sheet.getPhysicalNumberOfRows() > 0)) {
+			    rowTotal++;
+			}
+			
+			
+			// Iterate through each rows one by one
+			Iterator<Row> rowIterator = sheet.iterator();
+			 list1 = new String[rowTotal][2];
+			 
+			while (rowIterator.hasNext()) {
+				Row row = rowIterator.next();
+				// For each row, iterate through all the columns
+				Iterator<Cell> cellIterator = row.cellIterator();
+
+				int cellCount = 0; 
+				int noOfColumns = row.getLastCellNum(); 
+				String[] tempList1 = new String[noOfColumns];
+				
+				
+				
+				while (cellIterator.hasNext()) {
+					Cell cell = cellIterator.next();
+					// Check the cell type and format accordingly
+					switch (cell.getCellType()) {
+
+					case Cell.CELL_TYPE_NUMERIC:
+						
+						if(((Double) cell.getNumericCellValue()).toString()!=null){
+							tempList1[cellCount] = ((Double) cell.getNumericCellValue()).toString(); 
+						} 
+						break;
+					case Cell.CELL_TYPE_STRING:
+						if(cell.getStringCellValue()!=null){
+							tempList1[cellCount] =cell.getStringCellValue();
+						}
+						break;
+					}
+					cellCount ++; 
+				}
+				if(tempList1 != null){
+					list1[rowCount++] = tempList1;
+				}
+			}
+		
+			
+			file.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list1;
+	}
+
 
 	public static void main(String[] args) {
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
+		String fileName = "C:/Users/SwapnaKannan/Documents/IBM/Manipal Projects/eLearningProject/Testdata.xlsx";
 		
 		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName)){
 			for(String  tt : temp){
 				System.out.println(tt);
 			}
+			for(String [] temp1 : new ApachePOIExcelRead().getExcelContent1(fileName)){
+				for(String  tt : temp1){
+					System.out.println(tt);
+				}
 		}
 
+		}
 	}
-}
+	}

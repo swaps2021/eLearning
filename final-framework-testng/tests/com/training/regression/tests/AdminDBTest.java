@@ -1,0 +1,59 @@
+package com.training.regression.tests;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.training.dataproviders.AdminDataProviders;
+import com.training.generics.ScreenShot;
+import com.training.pom.AdminDbPOM;
+import com.training.utility.DriverFactory;
+import com.training.utility.DriverNames;
+
+public class AdminDBTest {
+	private WebDriver driver;
+	private String baseUrl;
+	private AdminDbPOM adminPOM;
+	private static Properties properties;
+	private ScreenShot screenShot;
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws IOException {
+		properties = new Properties();
+		FileInputStream inStream = new FileInputStream("./resources/others.properties");
+		properties.load(inStream);
+	}
+
+	@BeforeMethod
+	public void setUp() throws Exception {
+		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		adminPOM = new AdminDbPOM(driver);
+		baseUrl = properties.getProperty("baseURL");
+		screenShot = new ScreenShot(driver);
+		// open the browser
+		driver.get(baseUrl);
+	}
+
+	@AfterMethod
+	public void tearDown() throws Exception {
+		driver.quit();
+	}
+
+	//To verify if user-details are taking inputs from the database table 
+	@Test(dataProvider = "db-inputs", dataProviderClass = AdminDataProviders.class)
+	public void addNewUser(String fName, String lName, String email, String phone,String uName, String pwd) throws InterruptedException 
+	{
+		adminPOM.sendUserName("admin");
+		adminPOM.sendPassword("admin@123");
+		adminPOM.clickLoginBtn();
+		adminPOM.addNewUser(fName,lName,email,phone,uName,pwd);
+		screenShot.captureScreenShot("User Added Table");
+	}
+
+}

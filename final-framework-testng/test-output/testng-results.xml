@@ -1,29 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="84057" started-at="2019-01-23T12:16:49Z" finished-at="2019-01-23T12:18:13Z">
+  <suite name="Default suite" duration-ms="127645" started-at="2019-02-05T06:34:09Z" finished-at="2019-02-05T06:36:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="84057" started-at="2019-01-23T12:16:49Z" finished-at="2019-01-23T12:18:13Z">
-      <class name="com.training.sanity.tests.creatNewProject">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="setUpBeforeClass" is-config="true" duration-ms="13" started-at="2019-01-23T12:16:49Z" finished-at="2019-01-23T12:16:49Z">
+    <test name="Default test" duration-ms="127645" started-at="2019-02-05T06:34:09Z" finished-at="2019-02-05T06:36:17Z">
+      <class name="com.training.regression.tests.InvalidUserDetails">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="setUpBeforeClass" is-config="true" duration-ms="24" started-at="2019-02-05T06:34:09Z" finished-at="2019-02-05T06:34:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="setUp" is-config="true" duration-ms="11078" started-at="2019-01-23T12:16:49Z" finished-at="2019-01-23T12:17:00Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="setUp" is-config="true" duration-ms="12955" started-at="2019-02-05T06:34:10Z" finished-at="2019-02-05T06:34:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="projectNew()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="projectNew" duration-ms="71078" started-at="2019-01-23T12:17:00Z" finished-at="2019-01-23T12:18:11Z">
+        <test-method status="PASS" signature="addNewUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="addNewUser" duration-ms="21175" started-at="2019-02-05T06:34:23Z" data-provider="excel-inputs1" finished-at="2019-02-05T06:34:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mehadi]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[manzoor@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9.87654321E9]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[manzoor]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[manzoor]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- projectNew -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.creatNewProject@91161c7]" name="tearDown" is-config="true" duration-ms="1859" started-at="2019-01-23T12:18:11Z" finished-at="2019-01-23T12:18:13Z">
+        </test-method> <!-- addNewUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="tearDown" is-config="true" duration-ms="706" started-at="2019-02-05T06:34:44Z" finished-at="2019-02-05T06:34:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.creatNewProject -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="setUp" is-config="true" duration-ms="9719" started-at="2019-02-05T06:34:45Z" finished-at="2019-02-05T06:34:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="addNewUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="addNewUser" duration-ms="18910" started-at="2019-02-05T06:34:55Z" data-provider="excel-inputs1" finished-at="2019-02-05T06:35:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[alex]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[hales]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[alex]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9.876543211E9]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[alex]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[alex]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="tearDown" is-config="true" duration-ms="742" started-at="2019-02-05T06:35:14Z" finished-at="2019-02-05T06:35:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="setUp" is-config="true" duration-ms="9860" started-at="2019-02-05T06:35:14Z" finished-at="2019-02-05T06:35:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="addNewUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="addNewUser" duration-ms="21332" started-at="2019-02-05T06:35:24Z" data-provider="excel-inputs1" finished-at="2019-02-05T06:35:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[george]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[bush]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[george@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[georgebush]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[george]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[george]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="tearDown" is-config="true" duration-ms="663" started-at="2019-02-05T06:35:46Z" finished-at="2019-02-05T06:35:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="setUp" is-config="true" duration-ms="11242" started-at="2019-02-05T06:35:46Z" finished-at="2019-02-05T06:35:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="addNewUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="addNewUser" duration-ms="18737" started-at="2019-02-05T06:35:58Z" data-provider="excel-inputs1" finished-at="2019-02-05T06:36:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mark]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[angel]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[mark@gmail]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9.876543213E9]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[mark]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[mark]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.InvalidUserDetails@604ed9f0]" name="tearDown" is-config="true" duration-ms="662" started-at="2019-02-05T06:36:16Z" finished-at="2019-02-05T06:36:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.regression.tests.InvalidUserDetails -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
